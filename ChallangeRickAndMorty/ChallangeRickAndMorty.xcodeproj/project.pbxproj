@@ -19,6 +19,7 @@
 		2A8EFF1C2A4606A70093D53C /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF1B2A4606A70093D53C /* HomeCell.swift */; };
 		2A8EFF1E2A4616170093D53C /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF1D2A4616170093D53C /* DetalhesViewController.swift */; };
 		2A8EFF202A461B810093D53C /* DetalhesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF1F2A461B810093D53C /* DetalhesView.swift */; };
+		2A8EFF222A4631080093D53C /* CelulaPersonagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF212A4631080093D53C /* CelulaPersonagem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2A8EFF1B2A4606A70093D53C /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		2A8EFF1D2A4616170093D53C /* DetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
 		2A8EFF1F2A461B810093D53C /* DetalhesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesView.swift; sourceTree = "<group>"; };
+		2A8EFF212A4631080093D53C /* CelulaPersonagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelulaPersonagem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				2A8EFF192A4601AE0093D53C /* HomeView.swift */,
 				2A8EFF1F2A461B810093D53C /* DetalhesView.swift */,
 				2A8EFF1B2A4606A70093D53C /* HomeCell.swift */,
+				2A8EFF212A4631080093D53C /* CelulaPersonagem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A8EFF222A4631080093D53C /* CelulaPersonagem.swift in Sources */,
 				2A8EFEEE2A45FF0E0093D53C /* ChallangeRickAndMorty.xcdatamodeld in Sources */,
 				2A8EFF1A2A4601AE0093D53C /* HomeView.swift in Sources */,
 				2A8EFF202A461B810093D53C /* DetalhesView.swift in Sources */,
