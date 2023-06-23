@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A8EFEE42A45FF0E0093D53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFEE32A45FF0E0093D53C /* AppDelegate.swift */; };
-		2A8EFEE62A45FF0E0093D53C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFEE52A45FF0E0093D53C /* SceneDelegate.swift */; };
-		2A8EFEE82A45FF0E0093D53C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFEE72A45FF0E0093D53C /* ViewController.swift */; };
-		2A8EFEEB2A45FF0E0093D53C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8EFEE92A45FF0E0093D53C /* Main.storyboard */; };
+		2A8EFEE82A45FF0E0093D53C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFEE72A45FF0E0093D53C /* HomeViewController.swift */; };
 		2A8EFEEE2A45FF0E0093D53C /* ChallangeRickAndMorty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFEEC2A45FF0E0093D53C /* ChallangeRickAndMorty.xcdatamodeld */; };
 		2A8EFEF02A45FF100093D53C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A8EFEEF2A45FF100093D53C /* Assets.xcassets */; };
 		2A8EFEF32A45FF100093D53C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8EFEF12A45FF100093D53C /* LaunchScreen.storyboard */; };
@@ -39,9 +37,7 @@
 /* Begin PBXFileReference section */
 		2A8EFEE02A45FF0E0093D53C /* ChallangeRickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallangeRickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8EFEE32A45FF0E0093D53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A8EFEE52A45FF0E0093D53C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A8EFEE72A45FF0E0093D53C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2A8EFEEA2A45FF0E0093D53C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A8EFEE72A45FF0E0093D53C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2A8EFEED2A45FF0E0093D53C /* ChallangeRickAndMorty.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChallangeRickAndMorty.xcdatamodel; sourceTree = "<group>"; };
 		2A8EFEEF2A45FF100093D53C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A8EFEF22A45FF100093D53C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,11 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				2A8EFEE32A45FF0E0093D53C /* AppDelegate.swift */,
-				2A8EFEE52A45FF0E0093D53C /* SceneDelegate.swift */,
-				2A8EFEE72A45FF0E0093D53C /* ViewController.swift */,
-				2A8EFEE92A45FF0E0093D53C /* Main.storyboard */,
-				2A8EFEEF2A45FF100093D53C /* Assets.xcassets */,
 				2A8EFEF12A45FF100093D53C /* LaunchScreen.storyboard */,
+				2A8EFEEF2A45FF100093D53C /* Assets.xcassets */,
+				2A8EFF162A4600370093D53C /* Controller */,
+				2A8EFF182A4600500093D53C /* Model */,
+				2A8EFF172A4600440093D53C /* View */,
 				2A8EFEF42A45FF100093D53C /* Info.plist */,
 				2A8EFEEC2A45FF0E0093D53C /* ChallangeRickAndMorty.xcdatamodeld */,
 			);
@@ -128,6 +124,28 @@
 				2A8EFF092A45FF100093D53C /* ChallangeRickAndMortyUITestsLaunchTests.swift */,
 			);
 			path = ChallangeRickAndMortyUITests;
+			sourceTree = "<group>";
+		};
+		2A8EFF162A4600370093D53C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2A8EFEE72A45FF0E0093D53C /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2A8EFF172A4600440093D53C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2A8EFF182A4600500093D53C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +254,6 @@
 			files = (
 				2A8EFEF32A45FF100093D53C /* LaunchScreen.storyboard in Resources */,
 				2A8EFEF02A45FF100093D53C /* Assets.xcassets in Resources */,
-				2A8EFEEB2A45FF0E0093D53C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +279,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8EFEEE2A45FF0E0093D53C /* ChallangeRickAndMorty.xcdatamodeld in Sources */,
-				2A8EFEE82A45FF0E0093D53C /* ViewController.swift in Sources */,
+				2A8EFEE82A45FF0E0093D53C /* HomeViewController.swift in Sources */,
 				2A8EFEE42A45FF0E0093D53C /* AppDelegate.swift in Sources */,
-				2A8EFEE62A45FF0E0093D53C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2A8EFEE92A45FF0E0093D53C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A8EFEEA2A45FF0E0093D53C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2A8EFEF12A45FF100093D53C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +454,6 @@
 				INFOPLIST_FILE = ChallangeRickAndMorty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +481,6 @@
 				INFOPLIST_FILE = ChallangeRickAndMorty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
