@@ -17,6 +17,8 @@
 		2A8EFF0A2A45FF100093D53C /* ChallangeRickAndMortyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF092A45FF100093D53C /* ChallangeRickAndMortyUITestsLaunchTests.swift */; };
 		2A8EFF1A2A4601AE0093D53C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF192A4601AE0093D53C /* HomeView.swift */; };
 		2A8EFF1C2A4606A70093D53C /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF1B2A4606A70093D53C /* HomeCell.swift */; };
+		2A8EFF1E2A4616170093D53C /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF1D2A4616170093D53C /* DetalhesViewController.swift */; };
+		2A8EFF202A461B810093D53C /* DetalhesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF1F2A461B810093D53C /* DetalhesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		2A8EFF092A45FF100093D53C /* ChallangeRickAndMortyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallangeRickAndMortyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2A8EFF192A4601AE0093D53C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2A8EFF1B2A4606A70093D53C /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		2A8EFF1D2A4616170093D53C /* DetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
+		2A8EFF1F2A461B810093D53C /* DetalhesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8EFEE72A45FF0E0093D53C /* HomeViewController.swift */,
+				2A8EFF1D2A4616170093D53C /* DetalhesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8EFF192A4601AE0093D53C /* HomeView.swift */,
+				2A8EFF1F2A461B810093D53C /* DetalhesView.swift */,
 				2A8EFF1B2A4606A70093D53C /* HomeCell.swift */,
 			);
 			path = View;
@@ -286,6 +292,8 @@
 			files = (
 				2A8EFEEE2A45FF0E0093D53C /* ChallangeRickAndMorty.xcdatamodeld in Sources */,
 				2A8EFF1A2A4601AE0093D53C /* HomeView.swift in Sources */,
+				2A8EFF202A461B810093D53C /* DetalhesView.swift in Sources */,
+				2A8EFF1E2A4616170093D53C /* DetalhesViewController.swift in Sources */,
 				2A8EFEE82A45FF0E0093D53C /* HomeViewController.swift in Sources */,
 				2A8EFEE42A45FF0E0093D53C /* AppDelegate.swift in Sources */,
 				2A8EFF1C2A4606A70093D53C /* HomeCell.swift in Sources */,

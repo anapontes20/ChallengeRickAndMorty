@@ -10,20 +10,22 @@ import UIKit
 class HomeView: UIView {
     
     let titulo: UILabel = {
-        let label = UILabel()
-        label.text = "Personagens"
-        label.textColor = .white
-        return label
+    let label = UILabel()
+    label.text = "Personagens"
+    label.textColor = .white
+    return label
     }()
     
     let listaPersonagens: UITableView = {
     let lista = UITableView()
     lista.backgroundColor = .clear
-    lista.register(MovieCell.self, forCellReuseIdentifier: "teste")
+    lista.register(HomeCell.self, forCellReuseIdentifier: "home")
     lista.rowHeight = 150
     lista.estimatedRowHeight = 150
     return lista
-}()
+    }()
+    
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,12 +43,13 @@ class HomeView: UIView {
         addSubview(titulo)
         addSubview(listaPersonagens)
         
+        
         titulo.translatesAutoresizingMaskIntoConstraints = false
         listaPersonagens.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-           // titulo.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titulo.topAnchor.constraint(equalTo: topAnchor, constant: 80 ),
+          
+            titulo.topAnchor.constraint(equalTo: topAnchor, constant: 50 ),
             titulo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 150),
             titulo.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 150),
             
@@ -54,6 +57,7 @@ class HomeView: UIView {
             listaPersonagens.trailingAnchor.constraint(equalTo: trailingAnchor),
             listaPersonagens.topAnchor.constraint(equalTo: topAnchor),
             listaPersonagens.bottomAnchor.constraint(equalTo: bottomAnchor)
+            
         ])
         
         
