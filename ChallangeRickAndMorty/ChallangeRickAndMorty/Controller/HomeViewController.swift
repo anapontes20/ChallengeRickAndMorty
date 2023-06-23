@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = homeView
+        //view = celulaPersonagem
         homeView.listaPersonagens.dataSource = self
         homeView.listaPersonagens.delegate = self
         

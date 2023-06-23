@@ -17,9 +17,18 @@ class CelulaPersonagem: UIView {
         return nome
     }()
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupCell()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     func setupCell() {
-        addSubview(nomePersonagem)
         
+        addSubview(nomePersonagem)
+    
         nomePersonagem.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
