@@ -15,6 +15,8 @@
 		2A8EFEFE2A45FF100093D53C /* ChallangeRickAndMortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFEFD2A45FF100093D53C /* ChallangeRickAndMortyTests.swift */; };
 		2A8EFF082A45FF100093D53C /* ChallangeRickAndMortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF072A45FF100093D53C /* ChallangeRickAndMortyUITests.swift */; };
 		2A8EFF0A2A45FF100093D53C /* ChallangeRickAndMortyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF092A45FF100093D53C /* ChallangeRickAndMortyUITestsLaunchTests.swift */; };
+		2A8EFF1A2A4601AE0093D53C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF192A4601AE0093D53C /* HomeView.swift */; };
+		2A8EFF1C2A4606A70093D53C /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFF1B2A4606A70093D53C /* HomeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		2A8EFF032A45FF100093D53C /* ChallangeRickAndMortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallangeRickAndMortyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8EFF072A45FF100093D53C /* ChallangeRickAndMortyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallangeRickAndMortyUITests.swift; sourceTree = "<group>"; };
 		2A8EFF092A45FF100093D53C /* ChallangeRickAndMortyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallangeRickAndMortyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2A8EFF192A4601AE0093D53C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2A8EFF1B2A4606A70093D53C /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,8 @@
 		2A8EFF172A4600440093D53C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2A8EFF192A4601AE0093D53C /* HomeView.swift */,
+				2A8EFF1B2A4606A70093D53C /* HomeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,8 +285,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8EFEEE2A45FF0E0093D53C /* ChallangeRickAndMorty.xcdatamodeld in Sources */,
+				2A8EFF1A2A4601AE0093D53C /* HomeView.swift in Sources */,
 				2A8EFEE82A45FF0E0093D53C /* HomeViewController.swift in Sources */,
 				2A8EFEE42A45FF0E0093D53C /* AppDelegate.swift in Sources */,
+				2A8EFF1C2A4606A70093D53C /* HomeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
