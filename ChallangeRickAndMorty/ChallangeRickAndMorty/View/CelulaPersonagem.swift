@@ -33,27 +33,21 @@ class CelulaPersonagem: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     func setupCell() {
-        
-        
-        
+    
         addSubview(nomePersonagem)
         addSubview(posterPersonagem)
         
         nomePersonagem.translatesAutoresizingMaskIntoConstraints = false
         posterPersonagem.translatesAutoresizingMaskIntoConstraints = false
-
-
+        
         NSLayoutConstraint.activate([
         nomePersonagem.topAnchor.constraint(equalTo: topAnchor),
-      //nomePersonagem.centerXAnchor.constraint(equalTo: centerXAnchor),
         nomePersonagem.bottomAnchor.constraint(equalTo: bottomAnchor),
-       //nomePersonagem.centerYAnchor.constraint(equalTo: centerYAnchor),
         nomePersonagem.trailingAnchor.constraint(equalTo: trailingAnchor),
         nomePersonagem.leadingAnchor.constraint(equalTo: posterPersonagem.trailingAnchor),
         
         posterPersonagem.widthAnchor.constraint(equalToConstant: 150),
         posterPersonagem.leadingAnchor.constraint(equalTo: leadingAnchor),
-        //posterPersonagem.trailingAnchor.constraint(equalTo:trailingAnchor),
         posterPersonagem.heightAnchor.constraint(equalToConstant: 150),
         posterPersonagem.topAnchor.constraint(equalTo: topAnchor),
         

@@ -9,22 +9,10 @@ import UIKit
 
 class HomeCell: UITableViewCell {
     
-    
     var celula = CelulaPersonagem()
-    
-//    var celulaPersonagem: UIView = {
-//       var celula = CelulaPersonagem()
-//        return celula
-//    }()
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        celulaPersonagem.backgroundColor = .darkGray
-//        celulaPersonagem.translatesAutoresizingMaskIntoConstraints = false
-//        celulaPersonagem.layer.masksToBounds = true
-//        celulaPersonagem.layer.cornerRadius = 20
-        
-        
         
         setupCell()
     }
@@ -36,9 +24,6 @@ class HomeCell: UITableViewCell {
     func setupCell() {
         addSubview(contentView)
         contentView.addSubview(celula)
-        
-      //  addSubview(celula.posterPersonagem)
-       // addSubview(celula)
 
         NSLayoutConstraint.activate([
             celula.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
@@ -46,12 +31,9 @@ class HomeCell: UITableViewCell {
             celula.topAnchor.constraint(equalTo: contentView.topAnchor),
             celula.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
             
-            
-            
         ])
      backgroundColor = .clear
     contentView.backgroundColor = .clear
-        
         
     }
 }
