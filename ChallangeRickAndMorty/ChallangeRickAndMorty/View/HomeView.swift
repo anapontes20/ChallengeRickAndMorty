@@ -9,6 +9,8 @@ import UIKit
 
 class HomeView: UIView {
     
+    let personagem = CelulaPersonagem()
+    
     let titulo: UILabel = {
     let label = UILabel()
     label.text = "Personagens"
@@ -22,6 +24,7 @@ class HomeView: UIView {
     lista.register(HomeCell.self, forCellReuseIdentifier: "home")
     lista.rowHeight = 150
     lista.estimatedRowHeight = 150
+
     return lista
     }()
     
@@ -42,7 +45,7 @@ class HomeView: UIView {
         
         addSubview(titulo)
         addSubview(listaPersonagens)
-        
+
         
         titulo.translatesAutoresizingMaskIntoConstraints = false
         listaPersonagens.translatesAutoresizingMaskIntoConstraints = false

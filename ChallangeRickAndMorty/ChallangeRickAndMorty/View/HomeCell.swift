@@ -9,19 +9,23 @@ import UIKit
 
 class HomeCell: UITableViewCell {
     
+    var personagem = CelulaPersonagem()
+    
     var celulaPersonagem: UIView = {
-        let celula = UIView()
-        celula.backgroundColor = .darkGray
-        celula.translatesAutoresizingMaskIntoConstraints = false
-        celula.layer.masksToBounds = true
-        celula.layer.cornerRadius = 20
-        
+       var celula = CelulaPersonagem()
         return celula
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        celulaPersonagem.backgroundColor = .darkGray
+        celulaPersonagem.translatesAutoresizingMaskIntoConstraints = false
+        celulaPersonagem.layer.masksToBounds = true
+        celulaPersonagem.layer.cornerRadius = 20
+
+        
         setupCell()
+        //celulaPersonagem = personagem        
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +35,7 @@ class HomeCell: UITableViewCell {
     func setupCell() {
         
         addSubview(celulaPersonagem)
-        
+
         NSLayoutConstraint.activate([
             celulaPersonagem.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             celulaPersonagem.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
