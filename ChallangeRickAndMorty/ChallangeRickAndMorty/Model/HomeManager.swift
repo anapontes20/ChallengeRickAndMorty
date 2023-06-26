@@ -10,35 +10,28 @@ import CoreLocation
 
 
 protocol HomeManagerDelegate {
-    func  didUpdatehHome(_ HomeManager: HomeManager,home: HomeModel)
+    func  didUpdateHome(_ HomeManager: HomeManager,home: HomeModel)
     func didFailWithError(error: Error)
 }
 
 struct HomeManager {
-    let weatherURL =
-    "https://rickandmortyapi.com/api/character/"
+    let homeurl =
+    "https://rickandmortyapi.com/api"
     
     var delegate: HomeManagerDelegate?
     
     func fetchHome(personagem: String) {
-        let urlstring = "\(weatherURL)\(personagem)"
+        let urlstring = "\(homeurl)/\(personagem)"
         performRequest(with: urlstring)
         
     }
     
     func performRequest(with urlstring: String){
         
-        //1. criar url
         if let url = URL(string: urlstring) {
             print(urlstring)
-            //print(url)
-            
-            //2. criar urlsesion
             
             let session = URLSession(configuration: .default)
-            //print(session)
-            
-            //3.dar uma tarefa de sessão
             
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
@@ -48,35 +41,34 @@ struct HomeManager {
                 
                 if let safeData = data {
                     print("printando safedata: \(safeData)")
-                    //                    if let home = self.parseJSON(safeData)  {
-                    //                        //print(weather)
-                    //                        self.delegate?.didUpdateHome(self, home: home)
-                    //                    }
-                    //                }
-                    //            }
-                    //4.iniciar a tarefa
-                    // print(task)
-                    task.resume()
+                    if let home = self.parseJSON(safeData)  {
+                        self.delegate?.didUpdateHome(self, home: home)
+                    }
                 }
             }
+            task.resume()
+        }
+    }
+    
+    func parseJSON(_ homeData: Data) -> HomeModel? {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(HomeData.self, from: homeData)
+            print(decodedData)
+            let id = decodedData.id
+            let name = decodedData.name
+            let status = decodedData.status
+            let image = decodedData.image
             
-            //    func parseJSON(_ HomeData: Data) -> HomeModel? {
-            //        let decoder = JSONDecoder()
-            //        do {
-            //            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
-            //            print(decodedData)
-            //            let id = decodedData.weather[0].id
-            //            let temp = decodedData.main.temp
-            //            let name = decodedData.name
-            //
-            //            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
-            //            return weather
-            //        }catch {
-            //            delegate?.didFailWithError(error: error)
-            //            return nil
-            //        }
-            
+            let home = HomeModel(id: id, posterDoPersonagem: image, nomeDoPersonagem: name, statusDoPersonagem: status)
+
+            return home
+        }catch {
+            delegate?.didFailWithError(error: error)
+            return nil
         }
         
     }
+    
+    
 }
