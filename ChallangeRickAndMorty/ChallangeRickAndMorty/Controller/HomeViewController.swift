@@ -23,8 +23,6 @@ class HomeViewController: UIViewController {
         
         //navigationItem.searchController = searchController
     }
-
-
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -33,9 +31,9 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let homeCell = tableView.dequeueReusableCell(withIdentifier: "home", for: indexPath   )
-        
-        return homeCell
+        let cell: HomeCell = tableView.dequeueReusableCell(withIdentifier: "home", for: indexPath) as! HomeCell
+
+        return cell
     }
     
 }

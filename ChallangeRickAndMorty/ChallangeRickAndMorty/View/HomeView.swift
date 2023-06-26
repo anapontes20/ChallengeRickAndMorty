@@ -9,7 +9,7 @@ import UIKit
 
 class HomeView: UIView {
     
-    let personagem = CelulaPersonagem()
+//    let personagem = CelulaPersonagem()
     
     let titulo: UILabel = {
     let label = UILabel()
@@ -20,16 +20,14 @@ class HomeView: UIView {
     
     let listaPersonagens: UITableView = {
     let lista = UITableView()
-    lista.backgroundColor = .clear
+    lista.backgroundColor = .darkGray
     lista.register(HomeCell.self, forCellReuseIdentifier: "home")
     lista.rowHeight = 150
     lista.estimatedRowHeight = 150
 
     return lista
     }()
-    
-
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -42,11 +40,9 @@ class HomeView: UIView {
     
     func setupViews() {
         
-        
         addSubview(titulo)
         addSubview(listaPersonagens)
 
-        
         titulo.translatesAutoresizingMaskIntoConstraints = false
         listaPersonagens.translatesAutoresizingMaskIntoConstraints = false
         
