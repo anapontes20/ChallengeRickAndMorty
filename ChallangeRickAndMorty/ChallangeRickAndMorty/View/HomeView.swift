@@ -9,21 +9,21 @@ import UIKit
 
 class HomeView: UIView {
     
-//    let personagem = CelulaPersonagem()
+    let personagem = CelulaPersonagem()
     
-    let titulo: UILabel = {
-    let label = UILabel()
-    label.text = "Personagens"
-    label.textColor = .white
-    return label
-    }()
+//    let titulo: UILabel = {
+//    let label = UILabel()
+//    label.text = "Personagens"
+//    label.textColor = .white
+//    return label
+//    }()
     
     let listaPersonagens: UITableView = {
     let lista = UITableView()
-    lista.backgroundColor = .darkGray
+        lista.backgroundColor = .white
     lista.register(HomeCell.self, forCellReuseIdentifier: "home")
-    lista.rowHeight = 150
-    lista.estimatedRowHeight = 150
+    lista.rowHeight = 180
+    lista.estimatedRowHeight = 180
 
     return lista
     }()
@@ -40,17 +40,17 @@ class HomeView: UIView {
     
     func setupViews() {
         
-        addSubview(titulo)
+//        addSubview(titulo)
         addSubview(listaPersonagens)
 
-        titulo.translatesAutoresizingMaskIntoConstraints = false
+//        titulo.translatesAutoresizingMaskIntoConstraints = false
         listaPersonagens.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
           
-            titulo.topAnchor.constraint(equalTo: topAnchor, constant: 50 ),
-            titulo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 150),
-            titulo.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 150),
+//            titulo.topAnchor.constraint(equalTo: topAnchor, constant: 50 ),
+//            titulo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 150),
+//            titulo.trailingAnchor.constraint(equalTo: trailingAnchor,constant: 150),
             
             listaPersonagens.leadingAnchor.constraint(equalTo: leadingAnchor),
             listaPersonagens.trailingAnchor.constraint(equalTo: trailingAnchor),

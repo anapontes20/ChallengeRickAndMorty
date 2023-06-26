@@ -17,9 +17,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = homeView
-        //view = celulaPersonagem
         homeView.listaPersonagens.dataSource = self
         homeView.listaPersonagens.delegate = self
+        title = "Personagens"
+        
+        
         
         //navigationItem.searchController = searchController
     }
@@ -27,7 +29,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

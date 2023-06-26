@@ -14,7 +14,7 @@ class DetalhesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = detalhesView
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
         
     }
 

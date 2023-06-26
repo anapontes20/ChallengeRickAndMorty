@@ -27,10 +27,16 @@ class CelulaPersonagem: UIView {
     
     }()
     
+    var statusDoPersonagem: UILabel = {
+    let status = UILabel()
+    status.text = "Status: "
+    return status
+    }()
+    
     var nomePersonagem: UILabel = {
         let nome = UILabel()
         nome.text = "Morty"
-        nome.textColor = .white
+        nome.textColor = .black
         return nome
     }()
     
@@ -47,10 +53,12 @@ class CelulaPersonagem: UIView {
         addSubview(containerView)
         addSubview(posterPersonagem)
         addSubview(nomePersonagem)
+        addSubview(statusDoPersonagem)
         
         containerView.translatesAutoresizingMaskIntoConstraints = false
         nomePersonagem.translatesAutoresizingMaskIntoConstraints = false
         posterPersonagem.translatesAutoresizingMaskIntoConstraints = false
+        statusDoPersonagem.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
@@ -66,15 +74,19 @@ class CelulaPersonagem: UIView {
         posterPersonagem.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
         posterPersonagem.heightAnchor.constraint(equalToConstant: 150),
         posterPersonagem.topAnchor.constraint(equalTo: containerView.topAnchor),
-
-        nomePersonagem.centerXAnchor.constraint(equalTo: posterPersonagem.centerXAnchor, constant: 100),
-        nomePersonagem.centerYAnchor.constraint(equalTo: posterPersonagem.centerYAnchor, constant: -60),
+        
+        nomePersonagem.topAnchor.constraint(equalTo: topAnchor),
+        nomePersonagem.leadingAnchor.constraint(equalTo: posterPersonagem.trailingAnchor, constant: 10),
+       // nomePersonagem.bottomAnchor.constraint(equalTo: statusDoPersonagem.topAnchor),
+//        nomePersonagem.centerXAnchor.constraint(equalTo: posterPersonagem.centerXAnchor, constant: 100),
+//        nomePersonagem.centerYAnchor.constraint(equalTo: posterPersonagem.centerYAnchor, constant: -60),
         //nomePersonagem.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-        nomePersonagem.topAnchor.constraint(equalTo: containerView.topAnchor),
-        nomePersonagem.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+//        nomePersonagem.topAnchor.constraint(equalTo: containerView.topAnchor),
+//        nomePersonagem.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
 //        nomePersonagem.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
 //        nomePersonagem.leadingAnchor.constraint(equalTo: posterPersonagem.trailingAnchor),
-
+        statusDoPersonagem.leadingAnchor.constraint(equalTo: posterPersonagem.trailingAnchor, constant: 10),
+        statusDoPersonagem.topAnchor.constraint(equalTo: nomePersonagem.bottomAnchor),
 
 
 

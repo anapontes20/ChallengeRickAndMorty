@@ -19,7 +19,7 @@ class DetalhesView: UIView {
     let nomedoPersonagem: UILabel = {
     let nome = UILabel()
     nome.text = "Rick e Morty"
-        nome.textColor = .black
+    nome.textColor = .black
     return nome
         
     }()
@@ -36,7 +36,7 @@ class DetalhesView: UIView {
     let especie = UILabel()
     // fazer uma interpolacao no texto para dizer o status do personagem
     especie.text = "Especie: "
-    especie.textColor = .black
+        especie.textColor = .black
     return especie
     }()
     
