@@ -56,6 +56,14 @@ class DetalhesView: UIView {
     return localizacao
     }()
     
+    let generoDoPersonagem: UILabel = {
+    let genero = UILabel()
+    // fazer uma interpolacao no texto para dizer o status do personagem
+    genero.text = "Gênero: "
+    genero.textColor = .black
+    return genero
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -74,7 +82,7 @@ class DetalhesView: UIView {
         addSubview(especieDoPersonagem)
         addSubview(tipodePersonagem)
         addSubview(ultimaLocalizacao)
-    
+        addSubview(generoDoPersonagem)
         
         imagemPersonagem.translatesAutoresizingMaskIntoConstraints = false
         nomedoPersonagem.translatesAutoresizingMaskIntoConstraints = false
@@ -82,6 +90,7 @@ class DetalhesView: UIView {
         especieDoPersonagem.translatesAutoresizingMaskIntoConstraints = false
         tipodePersonagem.translatesAutoresizingMaskIntoConstraints = false
         ultimaLocalizacao.translatesAutoresizingMaskIntoConstraints = false
+        generoDoPersonagem.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
           
@@ -110,7 +119,9 @@ class DetalhesView: UIView {
             ultimaLocalizacao.leadingAnchor.constraint(equalTo: leadingAnchor),
             ultimaLocalizacao.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            
+            generoDoPersonagem.topAnchor.constraint(equalTo: ultimaLocalizacao.bottomAnchor),
+            generoDoPersonagem.leadingAnchor.constraint(equalTo: leadingAnchor),
+            generoDoPersonagem.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
         
         

@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
     
     
     let homeView = HomeView()
-    //let searchController = UISearchController()
+   // let searchController = UISearchController()
     
     
     override func viewDidLoad() {
@@ -42,5 +42,8 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          let detalhesViewController = DetalhesViewController()
+          navigationController?.pushViewController(detalhesViewController, animated: true)
+      }
 }
