@@ -6,69 +6,71 @@
 //
 
 import Foundation
-import CoreLocation
-
-
-protocol HomeManagerDelegate {
-    func  didUpdateHome(_ HomeManager: HomeManager,home: HomeModel)
-    func didFailWithError(error: Error)
-}
+import UIKit
 
 struct HomeManager {
-    let homeurl =
-    "https://rickandmortyapi.com/api"
     
-    var delegate: HomeManagerDelegate?
+    let myUrl = "https://rickandmortyapi.com/api/character"
     
-    func fetchHome(personagem: String) {
-        let urlstring = "\(homeurl)/\(personagem)"
-        performRequest(with: urlstring)
-        
-    }
-    
-    func performRequest(with urlstring: String){
-        
-        if let url = URL(string: urlstring) {
-            print(urlstring)
-            
+    func callApi() {
+        if let url = URL(string: myUrl) {
             let session = URLSession(configuration: .default)
-            
-            let task = session.dataTask(with: url) { (data, response, error) in
+            let task = session.dataTask(with: url) { data, response, error in
                 if error != nil {
-                    self.delegate?.didFailWithError(error: error!)
-                    return
+                    print(error)
                 }
-                
-                if let safeData = data {
-                    print("printando safedata: \(safeData)")
-                    if let home = self.parseJSON(safeData)  {
-                        self.delegate?.didUpdateHome(self, home: home)
+                if let data = data {
+                    print(data)
+                    do {
+                        if self.parseJSON(data) != nil {
+                        }
                     }
                 }
             }
             task.resume()
         }
     }
-    
     func parseJSON(_ homeData: Data) -> HomeModel? {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(HomeData.self, from: homeData)
-            print(decodedData)
-            let id = decodedData.id
-            let name = decodedData.name
-            let status = decodedData.status
-            let image = decodedData.image
+            let results = try! JSONDecoder().decode(RickAndMorty.self, from: homeData)
             
-            let home = HomeModel(id: id, posterDoPersonagem: image, nomeDoPersonagem: name, statusDoPersonagem: status)
-
+            //                let res = try! decoder.decode(RickAndMorty.self, from: homeData)
+            print(results)
+            
+            var resultModel = [ResultadoModel]()
+            
+            for item in results.results {
+                var episodeModel = [String]()
+                for episodio in item.episode {
+                    episodeModel.append(episodio)
+                }
+                
+                resultModel.append(ResultadoModel(id: item.id,
+                                                  nome: item.name,
+                                                  status: item.status,
+                                                  especie: item.species,
+                                                  tipo: item.type,
+                                                  genero: item.gender,
+                                                  origem: OriginModel(nome: item.origin.name, urlDaOrigem: item.origin.url),
+                                                  localizacao: LocationModel(nome: item.location.name, urlDaLocalizacao: item.location.url),
+                                                  imagem: item.image,
+                                                  episodio: episodeModel,
+                                                  urlDoEpisodio: item.url,
+                                                  created: item.created))
+            }
+           let home = HomeModel(
+            informacao: InfoModel(contador: results.info?.count ?? 0,
+                                  paginas: results.info?.pages ?? 0,
+                                  proximo: results.info?.next ?? "",
+                                  antes: results.info?.prev ?? ""),
+            resultado: resultModel)
+            
+            print(home)
+            
             return home
-        }catch {
-            delegate?.didFailWithError(error: error)
-            return nil
         }
-        
     }
-    
-    
-}
+  }
+
+

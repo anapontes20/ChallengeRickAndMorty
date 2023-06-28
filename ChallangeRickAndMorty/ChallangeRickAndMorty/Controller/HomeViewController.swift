@@ -9,22 +9,19 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    
     let homeView = HomeView()
-   // let searchController = UISearchController()
-    
-    
+    let homeManager = HomeManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view = homeView
         homeView.listaPersonagens.dataSource = self
         homeView.listaPersonagens.delegate = self
         title = "Personagens"
-        
-        
-        
-        //navigationItem.searchController = searchController
+        homeManager.callApi()
     }
+
+
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -47,3 +44,16 @@ extension HomeViewController: UITableViewDelegate {
           navigationController?.pushViewController(detalhesViewController, animated: true)
       }
 }
+
+//extension HomeViewController: HomeManagerDelegate {
+//    func didUpdateHome(_ HomeManager: HomeManager, home: HomeModel) {
+//        DispatchQueue.main.async {
+//        self.nomePersonagem.text = home.nomeDoPersonagem
+//        self.posterPersonagem.image = UIImage(systemName: home.posterDoPersonagem)
+//        self.statusDoPersonagem.text = home.statusDoPersonagem
+//    }
+//
+//
+//        }
+//
+//    }

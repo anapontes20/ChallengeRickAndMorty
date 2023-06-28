@@ -7,10 +7,40 @@
 
 import Foundation
 
-struct HomeModel{
-    
+
+struct HomeModel {
+    let informacao: InfoModel
+    let resultado: [ResultadoModel]
+}
+
+struct InfoModel {
+    let contador: Int
+    let paginas: Int
+    let proximo: String
+    let antes: String
+}
+
+struct ResultadoModel {
     let id: Int
-    let posterDoPersonagem: String
-    let nomeDoPersonagem: String
-    let statusDoPersonagem: String
+    let nome: String
+    let status: String
+    let especie: String
+    let tipo: String
+    let genero: String
+    let origem: OriginModel
+    let localizacao: LocationModel
+    let imagem: String
+    let episodio: [String]
+    let urlDoEpisodio: String
+    let created: String
+}
+
+struct OriginModel {
+    let nome: String
+    let urlDaOrigem: String
+}
+
+struct LocationModel {
+    let nome: String
+    let urlDaLocalizacao: String
 }
