@@ -8,10 +8,15 @@
 import Foundation
 import UIKit
 
+protocol HomeManagerDelegate {
+    func  didUpdateHome(_ HomeManager: HomeManager, rickAndMorty: RickAndMorty)
+}
+
 struct HomeManager {
     
     let myUrl = "https://rickandmortyapi.com/api/character"
-    
+    var delegate: HomeManagerDelegate?
+
     func callApi() {
         if let url = URL(string: myUrl) {
             let session = URLSession(configuration: .default)
@@ -21,21 +26,21 @@ struct HomeManager {
                 }
                 if let data = data {
                     print(data)
-                    do {
-                        if self.parseJSON(data) != nil {
-                        }
-                    }
+                    let home = self.parseJSON(data)
+                        
+                    
                 }
             }
             task.resume()
         }
+
     }
     func parseJSON(_ homeData: Data) -> HomeModel? {
         let decoder = JSONDecoder()
         do {
             let results = try! JSONDecoder().decode(RickAndMorty.self, from: homeData)
+            self.delegate?.didUpdateHome(self,  rickAndMorty: results)
             
-            //                let res = try! decoder.decode(RickAndMorty.self, from: homeData)
             print(results)
             
             var resultModel = [ResultadoModel]()
@@ -45,7 +50,6 @@ struct HomeManager {
                 for episodio in item.episode {
                     episodeModel.append(episodio)
                 }
-                
                 resultModel.append(ResultadoModel(id: item.id,
                                                   nome: item.name,
                                                   status: item.status,
@@ -59,7 +63,7 @@ struct HomeManager {
                                                   urlDoEpisodio: item.url,
                                                   created: item.created))
             }
-           let home = HomeModel(
+            let home = HomeModel(
             informacao: InfoModel(contador: results.info?.count ?? 0,
                                   paginas: results.info?.pages ?? 0,
                                   proximo: results.info?.next ?? "",
@@ -70,6 +74,7 @@ struct HomeManager {
             
             return home
         }
+        
     }
   }
 

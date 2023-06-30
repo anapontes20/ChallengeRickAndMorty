@@ -14,12 +14,12 @@ class CelulaPersonagem: UIView {
         view.backgroundColor = .darkGray
         view.layer.cornerRadius = 20
         return view
-        
+
     }()
   
     var posterPersonagem: UIImageView = {
         let poster = UIImageView()
-        poster.image = UIImage(named: "rick")
+        poster.image = UIImage()
         poster.clipsToBounds = true
         poster.layer.cornerRadius = 20
         poster.contentMode = .scaleToFill
@@ -28,9 +28,9 @@ class CelulaPersonagem: UIView {
     }()
     
     var statusDoPersonagem: UILabel = {
-    let status = UILabel()
-    status.text = "Status: "
-    return status
+        let status = UILabel()
+        status.text = "Status: "
+        return status
     }()
     
     var nomePersonagem: UILabel = {
@@ -41,12 +41,7 @@ class CelulaPersonagem: UIView {
         return nome
     }()
     
-    var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews:nomePersonagem)
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
+ 
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,8 +51,9 @@ class CelulaPersonagem: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     func setupCell() {
-        
         addSubview(containerView)
         addSubview(posterPersonagem)
         addSubview(nomePersonagem)
@@ -79,12 +75,13 @@ class CelulaPersonagem: UIView {
         containerView.heightAnchor.constraint(equalToConstant: 150),
 
         posterPersonagem.widthAnchor.constraint(equalToConstant: 150),
-        posterPersonagem.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+        posterPersonagem.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
         posterPersonagem.heightAnchor.constraint(equalToConstant: 150),
-        posterPersonagem.topAnchor.constraint(equalTo: containerView.topAnchor),
+        posterPersonagem.topAnchor.constraint(equalTo: topAnchor),
         
-//        nomePersonagem.topAnchor.constraint(equalTo: topAnchor),
-//        nomePersonagem.leadingAnchor.constraint(equalTo: posterPersonagem.trailingAnchor, constant: 10),
+        
+        nomePersonagem.topAnchor.constraint(equalTo: topAnchor),
+        nomePersonagem.leadingAnchor.constraint(equalTo: posterPersonagem.trailingAnchor, constant: 10),
 //       // nomePersonagem.bottomAnchor.constraint(equalTo: statusDoPersonagem.topAnchor),
 ////        nomePersonagem.centerXAnchor.constraint(equalTo: posterPersonagem.centerXAnchor, constant: 100),
 ////        nomePersonagem.centerYAnchor.constraint(equalTo: posterPersonagem.centerYAnchor, constant: -60),
@@ -93,8 +90,8 @@ class CelulaPersonagem: UIView {
 ////        nomePersonagem.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
 ////        nomePersonagem.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
 ////        nomePersonagem.leadingAnchor.constraint(equalTo: posterPersonagem.trailingAnchor),
-//        statusDoPersonagem.leadingAnchor.constraint(equalTo: posterPersonagem.trailingAnchor, constant: 10),
-//        statusDoPersonagem.topAnchor.constraint(equalTo: nomePersonagem.bottomAnchor),
+        statusDoPersonagem.leadingAnchor.constraint(equalTo: posterPersonagem.trailingAnchor, constant: 10),
+        statusDoPersonagem.topAnchor.constraint(equalTo: nomePersonagem.bottomAnchor),
 
 
 

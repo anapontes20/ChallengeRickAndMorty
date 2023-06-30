@@ -11,16 +11,16 @@ class HomeView: UIView {
     
     let personagem = CelulaPersonagem()
         
-    let listaPersonagens: UITableView = {
+    var listaPersonagens: UITableView = {
     let lista = UITableView()
-        lista.backgroundColor = .white
+    lista.backgroundColor = .white
     lista.register(HomeCell.self, forCellReuseIdentifier: "home")
     lista.rowHeight = 180
     lista.estimatedRowHeight = 180
-
     return lista
     }()
-        
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()

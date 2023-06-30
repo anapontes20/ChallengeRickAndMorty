@@ -11,6 +11,7 @@ import Foundation
 struct RickAndMorty: Codable {
     let info: Info?
     let results: [Results]
+
     
 }
     struct Info: Codable {
