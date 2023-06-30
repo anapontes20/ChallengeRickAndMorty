@@ -7,13 +7,27 @@
 
 import Foundation
 
-struct DetalhesModel {
-    
+struct DetalhesModel: Codable {
     let id: Int
-    let nomeDoPersonagem: String
-    let statusDoPersonagem: String
-    let especieDoPersonagem: String
-    let tipoDoPersonagem: String
-    let ultimaLocalizacao: String
-    let generoDoPersonagem: String
+    let nome: String
+    let status: String
+    let especie: String
+    let tipo: String
+    let genero: String
+    let origem: OrigemModel
+    let localizacao: LocalizacaoModel
+    let imagem: String
+    let episodio: [String]
+    let url: String
+    let created: String
+}
+       
+struct OrigemModel: Codable {
+    let name: String
+    let url: String
+}
+
+struct LocalizacaoModel: Codable {
+    let name: String
+    let url: String
 }

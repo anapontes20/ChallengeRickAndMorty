@@ -22,10 +22,10 @@ struct HomeManager {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
                 if error != nil {
-                    print(error)
+                 //   print(error)
                 }
                 if let data = data {
-                    print(data)
+                  //  print(data)
                     let home = self.parseJSON(data)
                         
                     
@@ -41,7 +41,7 @@ struct HomeManager {
             let results = try! JSONDecoder().decode(RickAndMorty.self, from: homeData)
             self.delegate?.didUpdateHome(self,  rickAndMorty: results)
             
-            print(results)
+           // print(results)
             
             var resultModel = [ResultadoModel]()
             
@@ -70,7 +70,7 @@ struct HomeManager {
                                   antes: results.info?.prev ?? ""),
             resultado: resultModel)
             
-            print(home)
+            //print(home)
             
             return home
         }

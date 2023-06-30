@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A31DF302A4F0029008683A4 /* DetalhesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A31DF2F2A4F0029008683A4 /* DetalhesManager.swift */; };
 		2A8EFEE42A45FF0E0093D53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFEE32A45FF0E0093D53C /* AppDelegate.swift */; };
 		2A8EFEE82A45FF0E0093D53C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFEE72A45FF0E0093D53C /* HomeViewController.swift */; };
 		2A8EFEEE2A45FF0E0093D53C /* ChallangeRickAndMorty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A8EFEEC2A45FF0E0093D53C /* ChallangeRickAndMorty.xcdatamodeld */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A31DF2F2A4F0029008683A4 /* DetalhesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesManager.swift; sourceTree = "<group>"; };
 		2A8EFEE02A45FF0E0093D53C /* ChallangeRickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallangeRickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8EFEE32A45FF0E0093D53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A8EFEE72A45FF0E0093D53C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -171,9 +173,10 @@
 			children = (
 				2AC6D4DE2A4A0BDC00579B0A /* HomeData.swift */,
 				2AC6D4E22A4A14A000579B0A /* HomeModel.swift */,
+				2AB321932A4DAD550076BC9B /* HomeManager.swift */,
 				2AC6D4E02A4A0DD400579B0A /* DetalhesData.swift */,
 				2AC6D4E42A4A14ED00579B0A /* DetalhesModel.swift */,
-				2AB321932A4DAD550076BC9B /* HomeManager.swift */,
+				2A31DF2F2A4F0029008683A4 /* DetalhesManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8EFF222A4631080093D53C /* CelulaPersonagem.swift in Sources */,
+				2A31DF302A4F0029008683A4 /* DetalhesManager.swift in Sources */,
 				2A8EFEEE2A45FF0E0093D53C /* ChallangeRickAndMorty.xcdatamodeld in Sources */,
 				2AC6D4E32A4A14A000579B0A /* HomeModel.swift in Sources */,
 				2AC6D4DF2A4A0BDC00579B0A /* HomeData.swift in Sources */,

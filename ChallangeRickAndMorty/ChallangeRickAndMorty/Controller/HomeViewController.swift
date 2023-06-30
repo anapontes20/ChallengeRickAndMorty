@@ -62,14 +62,20 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
     
+  
+    
 }
 
-// MARK: - Tela Detalhes
+// MARK: - TRANSICAO PRA TELA DE DETALHES:
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          let detalhesViewController = DetalhesViewController()
-          navigationController?.pushViewController(detalhesViewController, animated: true)
+        let selectedCharacterId = teste?.results[indexPath.row].id
+        let detailVC = DetalhesViewController()
+        detailVC.selectedCharacterID = selectedCharacterId ?? 0
+        navigationController?.pushViewController(detailVC, animated: true)
+             
+
       }
 }
 
