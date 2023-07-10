@@ -20,7 +20,16 @@ class HomeViewController: UIViewController {
         homeManager.delegate = self
         homeView.listaPersonagens.dataSource = self
         homeView.listaPersonagens.delegate = self
-        homeManager.callApi()
+        homeManager.callApi { result in
+            switch result {
+            case .success(let home):
+                // Faça algo com o objeto Home retornado
+                print(home)
+            case .failure(let error):
+                // Lide com o erro ocorrido
+                print(error)
+            }
+        }
 
         view = homeView
        
@@ -36,7 +45,7 @@ class HomeViewController: UIViewController {
 //MARK: - TABLEVIEW
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return homeManager.myUrl.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

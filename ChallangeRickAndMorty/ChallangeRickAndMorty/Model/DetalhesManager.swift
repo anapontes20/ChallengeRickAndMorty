@@ -24,7 +24,6 @@ struct DetalhesManager {
     }
     
     func callApi(with urlString: String)  {
-        guard let idString = urlString else {   }
         let urlPronta = fetchDetalhes(id: urlString)
         print(urlPronta)
         if let url = URL(string: urlPronta) {
