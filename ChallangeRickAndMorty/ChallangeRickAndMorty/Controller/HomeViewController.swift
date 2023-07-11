@@ -15,42 +15,41 @@ class HomeViewController: UIViewController {
     var homeManager = HomeManager()
     var teste: RickAndMorty?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeManager.delegate = self
         homeView.listaPersonagens.dataSource = self
         homeView.listaPersonagens.delegate = self
-        homeManager.callApi { result in
-            switch result {
-            case .success(let home):
-                // Faça algo com o objeto Home retornado
-                print(home)
-            case .failure(let error):
-                // Lide com o erro ocorrido
-                print(error)
-            }
-        }
+        homeManager.callApi()
 
         view = homeView
-       
         title = "Personagens"
-        
-
-        
-        
     }
+}
 
+// MARK: - DELEGATE
+
+extension HomeViewController: HomeManagerDelegate {
+    func didUpdateHome(_ HomeManager: HomeManager, rickAndMorty: RickAndMorty) {
+        teste = rickAndMorty
+        
+        DispatchQueue.main.async {
+            self.teste = rickAndMorty
+            self.homeView.listaPersonagens.reloadData()
+        }
+    }
 }
 
 //MARK: - TABLEVIEW
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return homeManager.myUrl.count
+       return homeManager.myUrl.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeCell = tableView.dequeueReusableCell(withIdentifier: "home", for: indexPath) as! HomeCell
-        //cell.celula.nomePersonagem.text = teste?.results[indexPath.row].name
+      //  cell.celula.nomePersonagem.text = teste?.results[indexPath.row].name
         
         if let nome = teste { cell.celula.nomePersonagem.text = nome.results[indexPath.row].name
             print(nome.results[indexPath.row].name)
@@ -70,9 +69,6 @@ extension HomeViewController: UITableViewDataSource {
             }
         return cell
     }
-    
-  
-    
 }
 
 // MARK: - TRANSICAO PRA TELA DE DETALHES:
@@ -83,23 +79,6 @@ extension HomeViewController: UITableViewDelegate {
         let detailVC = DetalhesViewController()
         detailVC.selectedCharacterID = selectedCharacterId ?? 0
         navigationController?.pushViewController(detailVC, animated: true)
-             
-
-      }
-}
-
-// MARK: - DELEGATE
-
-extension HomeViewController: HomeManagerDelegate {
-    func didUpdateHome(_ HomeManager: HomeManager, rickAndMorty: RickAndMorty) {
-        teste = rickAndMorty
-        DispatchQueue.main.async {
-            self.teste = rickAndMorty
-
-        }
-        
     }
-    
-
-    
 }
+

@@ -17,49 +17,24 @@ struct HomeManager {
     let myUrl = "https://rickandmortyapi.com/api/character"
     var delegate: HomeManagerDelegate?
 
-    
-    func callApi(completion: @escaping (Result<HomeModel, Error>) -> Void) {
+    func callApi() {
         if let url = URL(string: myUrl) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
-                if let error = error {
-                    // Caso ocorra um erro, chame a conclusão com o erro
-                    completion(.failure(error))
-                    return
+                if error != nil {
+                 //   print(error)
                 }
-                
                 if let data = data {
-                    // Se houver dados, chame o método de análise JSON e passe o resultado para a conclusão
-                    if let home = self.parseJSON(data) {
-                        completion(.success(home))
-                    } else {
-                        let parsingError = NSError(domain: "ParsingError", code: 0, userInfo: nil)
-                        completion(.failure(parsingError))
-                    }
+                  //  print(data)
+                    let home = self.parseJSON(data)
+
+
                 }
             }
             task.resume()
         }
-    }
 
-//    func callApi() {
-//        if let url = URL(string: myUrl) {
-//            let session = URLSession(configuration: .default)
-//            let task = session.dataTask(with: url) { data, response, error in
-//                if error != nil {
-//                 //   print(error)
-//                }
-//                if let data = data {
-//                  //  print(data)
-//                    let home = self.parseJSON(data)
-//
-//
-//                }
-//            }
-//            task.resume()
-//        }
-//
-//    }
+    }
     func parseJSON(_ homeData: Data) -> HomeModel? {
         let decoder = JSONDecoder()
         do {
